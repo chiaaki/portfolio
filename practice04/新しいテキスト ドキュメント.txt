@@ -1,0 +1,33 @@
+function changeBargainSale() {
+    arr = printExpirySort(getBargainPrice());
+    for (let ele of arr) {
+        let exDate = (Date.parse(ele.expiryDate) - Date.parse(NOWDATE)) / (24 * 60 * 60 * 1000)
+        if (exDate <= 3 && Checkbox.checked) {
+            document.getElementById(`item-price${ele.productId}`).innerHTML = `価格：${ele.productPrice}円　半額！`
+            document.getElementById(`item-price${ele.productId}`).style.color = "red"
+        }
+        else if (exDate <= 7 && Checkbox.checked) {
+            document.getElementById(`item-price${ele.productId}`).innerHTML = `価格：${ele.productPrice}円　2割引き！`
+            document.getElementById(`item-price${ele.productId}`).style.color = "orange"
+        }
+    }
+
+}
+function getBargainPrice() {
+    let arr = JSON.parse(JSON.stringify(dairyProductLists));
+    if (Checkbox.checked) {
+        for (let ele of arr) {
+            let exDate = (Date.parse(ele.expiryDate) - Date.parse(NOWDATE)) / (24 * 60 * 60 * 1000)
+            if (exDate <= 3) {
+                ele.productPrice = Math.floor(ele.productPrice * 0.5)
+            }
+            else if (exDate <= 7) {
+                ele.productPrice = Math.floor(ele.productPrice * 0.8)
+            }
+        }
+        return arr;
+    }
+    else {
+        return dairyProductLists;
+    }
+}
