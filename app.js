@@ -5,3 +5,6 @@ PAGEBTN.addEventListener('click', () => {
         behavior: "smooth"
     });
 });
+
+const TIMELINE = document.getElementsByClassName('timeline');
+console.log(TIMELINE);
