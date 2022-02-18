@@ -6,5 +6,13 @@ PAGEBTN.addEventListener('click', () => {
     });
 });
 
-const TIMELINE = document.getElementsByClassName('timeline');
-console.log(TIMELINE);
+const TIMELINE = document.querySelectorAll('.flex');
+TIMELINE.forEach(function(item, index){
+    const RECT = TIMELINE.getBoundingClientRect();
+    console.log(RECT);
+    const ELEMPOS = TIMELINE.offsetTop;
+    console.log(ELEMPOS);
+    item.onclick = function() {
+        console.log("あ");
+    }
+});
