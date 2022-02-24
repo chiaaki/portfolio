@@ -6,13 +6,27 @@ PAGEBTN.addEventListener('click', () => {
     });
 });
 
+function scrollTimeLineAnime() {
 const TIMELINE = document.querySelectorAll('.flex');
 TIMELINE.forEach(function(item, index){
-    const RECT = TIMELINE.getBoundingClientRect();
-    console.log(RECT);
-    const ELEMPOS = TIMELINE.offsetTop;
-    console.log(ELEMPOS);
-    item.onclick = function() {
-        console.log("あ");
+    let elemPos = TIMELINE[index].getBoundingClientRect().top;
+    let scroll = window.pageYOffset;
+    let windowHeight = window.innerHeight;
+    let startPoint = 100;
+    if(scroll >= elemPos - windowHeight - startPoint) {
+        let liHeight = TIMELINE[index].offsetHeight;
+        let percent = (scroll + startPoint - elemPos) / (liHeight / 2) * 100;
+        
+        if(percent > 100) {
+            percent = 100;
+        }
+
+        console.log(percent);
     }
+});
+
+}
+
+window.addEventListener('scroll', function() {
+    scrollTimeLineAnime();
 });
