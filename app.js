@@ -21,8 +21,10 @@ TIMELINE.forEach(function(item, index){
             percent = 100;
         }
 
-        console.log(percent);
-    }
+        let borderLine = TIMELINE[index].children[2];
+        borderLine.style.height = `${percent} %`;
+        console.log(borderLine);
+       }
 });
 
 }
