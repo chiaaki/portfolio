@@ -54,7 +54,7 @@ margin: 30px 0;
 }
 .contents{
     width: 1000px;
-    margin: auto;
+    margin: 0 auto;
 }
 .content + .content{
     margin-top:40px ;
@@ -146,7 +146,6 @@ footer p{
 
     .contents {
         width: 600px;
-        margin: 0 auto;
     }
 
     h1 {
@@ -157,7 +156,7 @@ footer p{
 
     .border-line {
         position: absolute;
-        left: 0.2em;
+        left: 100%;
         top: 0;
         width: 2px;
         height: 0;
@@ -168,6 +167,7 @@ footer p{
         width: 90%;
         margin: 0 auto;
     }
+
 }
 
 .timeline li {
@@ -210,10 +210,18 @@ footer p{
 
     .contents {
         width: 100vw;
-        margin: auto;
     }
 
     h1 {
         font-size: 20px;
+    }
+
+    .border-line {
+        right: 0;
+        left: 30%;
+        top: 0;
+        width: 2px;
+        height: 0;
+        background: #F1C774;
     }
 }
