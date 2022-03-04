@@ -12,6 +12,7 @@ body {
 }
 #wrapper{
     width: 100vw;
+    margin-bottom: 150px;
 }
 .flex{
     display: flex;
@@ -54,7 +55,7 @@ margin: 30px 0;
 }
 .contents{
     width: 1000px;
-    margin: 0 auto;
+    margin: 80px auto;
 }
 .content + .content{
     margin-top:40px ;
