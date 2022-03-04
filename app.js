@@ -23,7 +23,6 @@ TIMELINE.forEach(function(item, index){
 
         let borderLine = TIMELINE[index].children[2];
         borderLine.style.cssText = `height: ${percent}%`;
-        console.log(borderLine);
        }
 });
 
