@@ -23,7 +23,6 @@ TIMELINE.forEach(function(item, index){
 
         let borderLine = TIMELINE[index].children[2];
         borderLine.style.cssText = `height: ${percent}%`;
-        console.log(borderLine);
        }
 });
 
@@ -32,3 +31,10 @@ TIMELINE.forEach(function(item, index){
 window.addEventListener('scroll', function() {
     scrollTimeLineAnime();
 });
+
+let elemTop = [];
+
+let headerHeight = document.querySelector('#titlebox').clientHeight;
+
+let scrollPoint = document.querySelectorAll('.scroll-point');
+console.log(scrollPoint);
