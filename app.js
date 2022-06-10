@@ -31,3 +31,10 @@ TIMELINE.forEach(function(item, index){
 window.addEventListener('scroll', function() {
     scrollTimeLineAnime();
 });
+
+let elemTop = [];
+
+let headerHeight = document.querySelector('#titlebox').clientHeight;
+
+let scrollPoint = document.querySelectorAll('.scroll-point');
+console.log(scrollPoint);
